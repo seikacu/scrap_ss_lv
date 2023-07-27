@@ -3,6 +3,7 @@ import os
 import sys
 import threading
 
+from proxy_auth import proxies
 from selenium_recaptcha_solver import RecaptchaSolver
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -38,6 +39,8 @@ def set_driver_options(options:webdriver.ChromeOptions):
     
     options.add_argument('--no-sandbox')
     options.add_argument("--disable-extensions")
+    # options.add_argument("--proxy-server=ip:port")
+    
     
     options.debugger_address = 'localhost:8989'
 
